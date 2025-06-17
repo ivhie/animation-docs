@@ -1,0 +1,6 @@
+.swiper-slide img {
+  height: 300px; /* or any fixed height you want */
+  object-fit: cover; /* ensures image fills the area without distortion */
+  width: 100%;
+  display: block;
+}
