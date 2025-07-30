@@ -1,0 +1,78 @@
+
+<style>
+.text-rotator {
+  position: relative;
+  height:80px; /* Adjust to your font size */
+  overflow: hidden;
+}
+
+.text-item {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 0.5s ease-in-out;
+  font-size: 60px;
+    font-weight: 800;
+    letter-spacing: -2px;
+    color: #6EC1E4;
+     background: linear-gradient(220.49deg, #75C043 38.25%, #305A87 81.43%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* For Firefox */
+  background-clip: text;
+  color: transparent;
+}
+
+.text-item.active {
+  top: 0;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media only screen and (max-width: 600px) {
+    
+    .text-rotator {
+       height:60px; 
+      }
+   .text-item {
+       font-size:42px;
+   }
+}
+
+@media only screen and (max-width: 440px) {
+    
+    .text-rotator {
+       height:45px; 
+      }
+   .text-item {
+       font-size:32px;
+   }
+}
+
+</style>
+<div class="text-rotator">
+ <span class="text-item active">IT Asset Disposition</span>
+  <span class="text-item">Data Center Solutions</span>
+  <span class="text-item">E-Recycling</span>
+   <span class="text-item">Materials Recovery</span>
+   <span class="text-item">OEM Compliance</span>
+   <span class="text-item">Sustainability</span>
+</div>
+
+<script>
+jQuery(document).ready(function($) {
+  let currentIndex = 0;
+  const items = $('.text-rotator .text-item');
+  const itemCount = items.length;
+
+  setInterval(function() {
+    items.eq(currentIndex).removeClass('active');
+    currentIndex = (currentIndex + 1) % itemCount;
+    items.eq(currentIndex).addClass('active');
+  }, 3000); // 2 seconds per word
+});
+</script>
