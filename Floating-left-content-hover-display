@@ -1,0 +1,100 @@
+<style>
+ .floating-sidebar { 
+     background: #FFF;
+box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
+/*width: 370px;*/
+display: inline-block;
+height: 440px;
+position:relative;
+     
+}  
+
+ .floating-sidebar a {
+    padding: 10px 18px 10px 21px;
+    justify-content: space-between;
+    background: #75C043;
+    width:442px;
+    color: #FFF;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display:flex;
+    transform: rotate(-0.25turn);
+    position:absolute;
+    left:-199px;
+    top:198px;
+    z-index:4;
+box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
+ }
+ .floating-sidebar a img {
+      transform: rotate(-0.25turn);
+ }
+ 
+ .content-who-we-serve { padding-left:62px;
+     z-index:5;
+     padding-top:60px;
+   
+     position: absolute;
+      top: 0;
+      left: 0%; /* Start to the right of the button */
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0; /* Initially hidden */
+      height: 100%;
+      transition: width 0.2s ease;
+     
+ }  
+ 
+ 
+.content-who-we-serve ul {list-style:none;padding:0px; position:relative; }
+
+.content-who-we-serve ul li {
+    color:  #000;
+    font-size: 14.804px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display:flex;
+    align-content: center;
+    align-items:center;
+    column-gap: 15px;
+    margin-bottom:10px;
+}
+ .floating-sidebar:hover {
+     width: 370px; 
+     transition: width 0.2s ease;
+ }
+ .floating-sidebar:hover .content-who-we-serve {
+      width: 100%; /* Final expanded width */
+      /*padding: 12px 20px;*/
+    }
+
+.floating-sidebar:hover  a {
+    box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.25);
+    
+}
+
+.floating-sidebar:hover a img {
+    transform: rotate(-0.75turn);
+    
+}
+</style>
+
+
+<div class="floating-sidebar">
+    <a href="#">Who We Serve <img src="/wp-content/uploads/2025/07/expand_circle_right.svg" /></a>
+    <div class="content-who-we-serve">
+        
+        <ul>
+            
+            <li><img src="/wp-content/uploads/2025/07/页面-1-2.png" alt=""/>Enterprise & Corporate IT</li>
+            <li><img src="/wp-content/uploads/2025/07/medical_services-2.png" alt=""/>Healthcare & Life Sciences</li>
+            <li><img src="/wp-content/uploads/2025/07/account_balance-2.png" alt=""/>Government & Education</li>
+            <li><img src="/wp-content/uploads/2025/07/devices_other-2.png" alt=""/>Technology & SaaS Compnaies</li>
+            <li><img src="/wp-content/uploads/2025/07/environment-botany-foliage-forest_svgrepo.com-1.png" alt=""/>Sustainability & ESG Teams</li>
+            <li><img src="/wp-content/uploads/2025/07/diamond_svgrepo.com_.png" alt="" />Other Company Type</li>
+        </ul>
+    </div>
+    
+</div>
