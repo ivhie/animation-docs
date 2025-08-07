@@ -1,4 +1,4 @@
-
+--------------- version 1 -----------------
 <style>
 .text-rotator {
   position: relative;
@@ -76,3 +76,91 @@ jQuery(document).ready(function($) {
   }, 3000); // 2 seconds per word
 });
 </script>
+
+
+--------------- version 2 -----------------
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Text Rotator Slide to Top</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    .text-rotator-container {
+		position: relative;
+		  height: 80px;
+		  overflow: hidden;
+		 
+    }
+
+    .text-rotator-text {
+	  position: absolute;
+      width: 100%; 
+     
+	
+	  font-size: 60px;
+		font-weight: 800;
+		letter-spacing: -2px;
+		color: #6EC1E4;
+		 background: linear-gradient(220.49deg, #75C043 38.25%, #305A87 81.43%);
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: transparent;
+	  /* For Firefox */
+	  background-clip: text;
+	  color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+<div class="text-rotator-container">
+  <div class="text-rotator-text">Welcome to our site</div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    var messages = [
+      "Welcome to our site",
+      "We offer the best services",
+      "Contact us anytime",
+      "Follow us on social media",
+      "Thank you for visiting!"
+    ];
+
+    var index = 0;
+    var interval = 3000; // 3 seconds
+
+    function rotateText() {
+      var $container = $('.text-rotator-container');
+      var $current = $('.text-rotator-text');
+
+      // Get the next message
+      index = (index + 1) % messages.length;
+      var nextMessage = $('<div class="text-rotator-text">' + messages[index] + '</div>');
+
+      // Set initial position of the next message below the container
+      nextMessage.css({ top: '100%' });
+
+      // Append the new message
+      $container.append(nextMessage);
+
+      // Animate both current and next messages
+      $current.animate({ top: '-100%' }, 500, function () {
+        $(this).remove(); // Remove the old message after animation
+      });
+
+      nextMessage.animate({ top: '0' }, 500);
+    }
+
+    // Start the rotation
+    setInterval(rotateText, interval);
+  });
+</script>
+
+</body>
+</html>
+
+
+
